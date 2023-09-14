@@ -1,0 +1,600 @@
+
+*{
+    font-family: 'Quicksand', sans-serif;
+}
+
+*::-webkit-scrollbar {
+    width: 8px;               /* width of the entire scrollbar */
+}
+  
+*::-webkit-scrollbar-track {
+    background: transparent;        /* color of the tracking area */
+    padding: 2px;
+}
+  
+*::-webkit-scrollbar-thumb {
+    background-color: white;
+    border: 2px solid black;    /* color of the scroll thumb */
+    border-radius: 20px;  
+}
+
+.tarefa{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: fit-content;
+    gap: 8px;
+    margin: 12px;
+}
+
+
+#novaTarefa{
+    display: block;
+    height: 400px;
+
+    overflow: auto;
+    width: max-content;
+}
+
+
+body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(img/zyro-image_9.png);
+    background-size: 500px;
+}
+
+.a{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    padding: 15px;
+    border: 4px solid black;
+    border-radius: 13px;
+    box-shadow: rgba(0, 0, 0, 0.183) 15px 15px 15px;
+    background-color: white;
+}
+
+.a t{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#criar{
+    width: fit-content;
+    padding: 8px;
+    border-radius: 50px;
+    background-color: white;
+    border: 2px solid rgb(34, 122, 215);
+    color: black;
+}
+
+.input{
+    border: 1.7px solid black;
+    box-shadow: rgba(0, 0, 0, 0.183) 3px 3px 3px;
+    outline: none;
+    border-radius: 6px;
+    padding: 6px;
+}
+
+.spanh1{
+    color: rgb(34, 122, 215);
+}
+
+
+.deletar{
+    border: 2px solid red;
+    padding: 4px;
+    border-radius: 6px;
+    background-color: white;
+    color: red;
+    transition: 0.5s ease-in;
+
+}
+
+.deletar:hover {
+    border: 2px solid red;
+    border-radius: 6px;
+    padding: 2px;
+    box-shadow: 3px 3px 3px 3px #000000a1;
+    animation: 10s;
+}
+
+
+input[type="checkbox"] {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: 5px;
+    display: inline-block;
+    appearance: none;
+    position: relative;
+    background-color: #F2ECFF;
+    border-radius: 15%;
+    cursor: pointer;
+    overflow: hidden;
+   }
+   
+   input[type="checkbox"]::after {
+    content: '';
+    display: block;
+    height: 0.9rem;
+    width: .4rem;
+    border-bottom: .31rem solid #a0ffe7;
+    border-right: .31rem solid #a0ffe7;
+    opacity: 0;
+    transform: rotate(45deg) translate(-50%, -50%);
+    position: absolute;
+    top: 45%;
+    left: 21%;
+    transition: .25s ease;
+   }
+   
+   input[type="checkbox"]::before {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    background-color: #00C896;
+    border-radius: 50%;
+    opacity: .5;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: .3s ease;
+   }
+   
+   input[type="checkbox"]:checked::before {
+    height: 130%;
+    width: 130%;
+    opacity: 100%;
+   }
+   
+   
+
+   #expor{
+    width: fit-content;
+    padding: 8px;
+    border-radius: 50px;
+    background-color: white;
+    border: 2px solid rgb(34, 122, 215);
+    color: black;
+   }
+
+
+   button{
+    border: 2px solid #09dd09;
+    border-radius: 7px;
+    background-color: white;
+    color: #09dd09;
+    transition: 0.5s ease-in;
+   }
+
+   .edita{
+    border: 2px solid #A628B4 !important;
+    border-radius: 7px;
+    background-color: white;
+    color: #A628B4;
+    transition: 0.5s ease-in;
+   }
+
+   .edita:hover{
+        border: 2px solid purple !important;
+        border-radius: 6px;
+        padding: 2px;
+        box-shadow: 3px 3px 3px 3px #000000a1;
+   }
+
+
+   #criar {
+    --color: black;
+    --background: ffff;
+    --background-hover: #3A4059;
+    --background-left: #2B3044;
+    --folder: #F3E9CB;
+    --folder-inner: #BEB393;
+    --paper: #FFFFFF;
+    --paper-lines: #BBC1E1;
+    --paper-behind: #E1E6F9;
+    --pencil-cap: #fff;
+    --pencil-top: #275EFE;
+    --pencil-middle: #fff;
+    --pencil-bottom: #5C86FF;
+    --shadow: rgba(13, 15, 25, .2);
+    border: solid 3px rgb(34, 122, 215);
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19px;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    padding: 16px 27px 16px 67px;
+    transition: background 0.3s;
+    color: var(--color);
+    background: var(--bg, var(--background));
+  }
+  
+  #criar > div {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 53px;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 5px 0 0 5px;
+    background: white;
+    border-right: solid 3px rgb(34, 122, 215);
+  }
+  
+  #criar > div .folder {
+    width: 23px;
+    height: 27px;
+    position: absolute;
+    left: 15px;
+    top: 13px;
+  }
+  
+  #criar > div .folder .top {
+    left: 0;
+    top: 0;
+    z-index: 2;
+    position: absolute;
+    transform: translateX(var(--fx, 0));
+    transition: transform 0.4s ease var(--fd, 0.3s);
+  }
+  
+  #criar > div .folder .top svg {
+    width: 24px;
+    height: 27px;
+    display: block;
+    fill: var(--folder);
+    transform-origin: 0 50%;
+    transition: transform 0.3s ease var(--fds, 0.45s);
+    transform: perspective(120px) rotateY(var(--fr, 0deg));
+  }
+  
+  #criar > div .folder:before, #criar > div .folder:after,
+  #criar > div .folder .paper {
+    content: "";
+    position: absolute;
+    left: var(--l, 0);
+    top: var(--t, 0);
+    width: var(--w, 100%);
+    height: var(--h, 100%);
+    border-radius: 1px;
+    background: var(--b, var(--folder-inner));
+  }
+  
+  #criar > div .folder:before {
+    box-shadow: 0 1.5px 3px var(--shadow), 0 2.5px 5px var(--shadow), 0 3.5px 7px var(--shadow);
+    transform: translateX(var(--fx, 0));
+    transition: transform 0.4s ease var(--fd, 0.3s);
+  }
+  
+  #criar > div .folder:after,
+  #criar > div .folder .paper {
+    --l: 1px;
+    --t: 1px;
+    --w: 21px;
+    --h: 25px;
+    --b: var(--paper-behind);
+  }
+  
+  #criar > div .folder:after {
+    transform: translate(var(--pbx, 0), var(--pby, 0));
+    transition: transform 0.4s ease var(--pbd, 0s);
+  }
+  
+  #criar > div .folder .paper {
+    z-index: 1;
+    --b: var(--paper);
+  }
+  
+  #criar > div .folder .paper:before, #criar > div .folder .paper:after {
+    content: "";
+    width: var(--wp, 14px);
+    height: 2px;
+    border-radius: 1px;
+    transform: scaleY(0.5);
+    left: 3px;
+    top: var(--tp, 3px);
+    position: absolute;
+    background: var(--paper-lines);
+    box-shadow: 0 12px 0 0 var(--paper-lines), 0 24px 0 0 var(--paper-lines);
+  }
+  
+  #criar > div .folder .paper:after {
+    --tp: 6px;
+    --wp: 10px;
+  }
+  
+    #criar > div .pencil {
+    height: 2px;
+    width: 3px;
+    border-radius: 1px 1px 0 0;
+    top: 8px;
+    left: 105%;
+    position: absolute;
+    z-index: 3;
+    transform-origin: 50% 19px;
+    background: var(--pencil-cap);
+    transform: translateX(var(--pex, 0)) rotate(35deg);
+    transition: transform 0.4s ease var(--pbd, 0s);
+  }
+  
+  #criar > div .pencil:before, #criar > div .pencil:after {
+    content: "";
+    position: absolute;
+    display: block;
+    background: var(--b, linear-gradient(var(--pencil-top) 55%, var(--pencil-middle) 55.1%, var(--pencil-middle) 60%, var(--pencil-bottom) 60.1%));
+    width: var(--w, 5px);
+    height: var(--h, 20px);
+    border-radius: var(--br, 2px 2px 0 0);
+    top: var(--t, 2px);
+    left: var(--l, -1px);
+  }
+  
+  #criar > div .pencil:before {
+    -webkit-clip-path: polygon(0 5%, 5px 5%, 5px 17px, 50% 20px, 0 17px);
+    clip-path: polygon(0 5%, 5px 5%, 5px 17px, 50% 20px, 0 17px);
+  }
+  
+  #criar > div .pencil:after {
+    --b: none;
+    --w: 3px;
+    --h: 6px;
+    --br: 0 2px 1px 0;
+    --t: 3px;
+    --l: 3px;
+    border-top: 1px solid var(--pencil-top);
+    border-right: 1px solid var(--pencil-top);
+  }
+  
+  #criar:before, #criar:after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    border-radius: 1px;
+    background: var(--color);
+    transform-origin: 9px 1px;
+    transform: translateX(var(--cx, 0)) scale(0.5) rotate(var(--r, -45deg));
+    top: 26px;
+    right: 16px;
+    transition: transform 0.3s;
+  }
+  
+  #criar:after {
+    --r: 45deg;
+  }
+  
+  #criar:hover {
+    --cx: 2px;
+    --bg: white;
+    --fx: -40px;
+    --fr: -60deg;
+    --fd: .15s;
+    --fds: 0s;
+    --pbx: 3px;
+    --pby: -3px;
+    --pbd: .15s;
+    --pex: -24px;
+  }
+  
+
+  
+#decor {
+    background-color: none;
+    border: none;
+    color: black;
+    transition: 0.5s ease-in;
+
+}
+
+#decor:hover{
+    font-size: 17px;
+
+}
+
+
+#expor {
+    --color: black;
+    --background: ffff;
+    --background-hover: #3A4059;
+    --background-left: #2B3044;
+    --folder: #F3E9CB;
+    --folder-inner: #BEB393;
+    --paper: #FFFFFF;
+    --paper-lines: #BBC1E1;
+    --paper-behind: #E1E6F9;
+    --pencil-cap: #fff;
+    --pencil-top: #275EFE;
+    --pencil-middle: #fff;
+    --pencil-bottom: #5C86FF;
+    --shadow: rgba(13, 15, 25, .2);
+    border: solid 3px rgb(34, 122, 215);
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19px;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    padding: 16px 27px 16px 67px;
+    transition: background 0.3s;
+    color: var(--color);
+    background: var(--bg, var(--background));
+  }
+  
+  #expor > div {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 53px;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 5px 0 0 5px;
+    background: white;
+    border-right: solid 3px rgb(34, 122, 215);
+  }
+  
+  #expor > div .folder {
+    width: 23px;
+    height: 27px;
+    position: absolute;
+    left: 15px;
+    top: 13px;
+  }
+  
+  #expor > div .folder .top {
+    left: 0;
+    top: 0;
+    z-index: 2;
+    position: absolute;
+    transform: translateX(var(--fx, 0));
+    transition: transform 0.4s ease var(--fd, 0.3s);
+  }
+  
+  #expor > div .folder .top svg {
+    width: 24px;
+    height: 27px;
+    display: block;
+    fill: var(--folder);
+    transform-origin: 0 50%;
+    transition: transform 0.3s ease var(--fds, 0.45s);
+    transform: perspective(120px) rotateY(var(--fr, 0deg));
+  }
+  
+  #expor > div .folder:before, #expor > div .folder:after,
+  #expor > div .folder .paper {
+    content: "";
+    position: absolute;
+    left: var(--l, 0);
+    top: var(--t, 0);
+    width: var(--w, 100%);
+    height: var(--h, 100%);
+    border-radius: 1px;
+    background: var(--b, var(--folder-inner));
+  }
+  
+  #expor > div .folder:before {
+    box-shadow: 0 1.5px 3px var(--shadow), 0 2.5px 5px var(--shadow), 0 3.5px 7px var(--shadow);
+    transform: translateX(var(--fx, 0));
+    transition: transform 0.4s ease var(--fd, 0.3s);
+  }
+  
+  #expor > div .folder:after,
+  #expor > div .folder .paper {
+    --l: 1px;
+    --t: 1px;
+    --w: 21px;
+    --h: 25px;
+    --b: var(--paper-behind);
+  }
+  
+  #expor > div .folder:after {
+    transform: translate(var(--pbx, 0), var(--pby, 0));
+    transition: transform 0.4s ease var(--pbd, 0s);
+  }
+  
+  #expor > div .folder .paper {
+    z-index: 1;
+    --b: var(--paper);
+  }
+  
+  #expor > div .folder .paper:before, #expor > div .folder .paper:after {
+    content: "";
+    width: var(--wp, 14px);
+    height: 2px;
+    border-radius: 1px;
+    transform: scaleY(0.5);
+    left: 3px;
+    top: var(--tp, 3px);
+    position: absolute;
+    background: var(--paper-lines);
+    box-shadow: 0 12px 0 0 var(--paper-lines), 0 24px 0 0 var(--paper-lines);
+  }
+  
+  #expor > div .folder .paper:after {
+    --tp: 6px;
+    --wp: 10px;
+  }
+  
+    #expor > div .pencil {
+    height: 2px;
+    width: 3px;
+    border-radius: 1px 1px 0 0;
+    top: 8px;
+    left: 105%;
+    position: absolute;
+    z-index: 3;
+    transform-origin: 50% 19px;
+    background: var(--pencil-cap);
+    transform: translateX(var(--pex, 0)) rotate(35deg);
+    transition: transform 0.4s ease var(--pbd, 0s);
+  }
+  
+  #expor > div .pencil:before, #expor > div .pencil:after {
+    content: "";
+    position: absolute;
+    display: block;
+    background: var(--b, linear-gradient(var(--pencil-top) 55%, var(--pencil-middle) 55.1%, var(--pencil-middle) 60%, var(--pencil-bottom) 60.1%));
+    width: var(--w, 5px);
+    height: var(--h, 20px);
+    border-radius: var(--br, 2px 2px 0 0);
+    top: var(--t, 2px);
+    left: var(--l, -1px);
+  }
+  
+  #expor > div .pencil:before {
+    -webkit-clip-path: polygon(0 5%, 5px 5%, 5px 17px, 50% 20px, 0 17px);
+    clip-path: polygon(0 5%, 5px 5%, 5px 17px, 50% 20px, 0 17px);
+  }
+  
+  #expor > div .pencil:after {
+    --b: none;
+    --w: 3px;
+    --h: 6px;
+    --br: 0 2px 1px 0;
+    --t: 3px;
+    --l: 3px;
+    border-top: 1px solid var(--pencil-top);
+    border-right: 1px solid var(--pencil-top);
+  }
+  
+  #expor:before, #expor:after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    border-radius: 1px;
+    background: var(--color);
+    transform-origin: 9px 1px;
+    transform: translateX(var(--cx, 0)) scale(0.5) rotate(var(--r, -45deg));
+    top: 26px;
+    right: 16px;
+    transition: transform 0.3s;
+  }
+  
+  #expor:after {
+    --r: 45deg;
+  }
+  
+  #expor:hover {
+    --cx: 2px;
+    --bg: white;
+    --fx: -40px;
+    --fr: -60deg;
+    --fd: .15s;
+    --fds: 0s;
+    --pbx: 3px;
+    --pby: -3px;
+    --pbd: .15s;
+    --pex: -24px;
+  }
